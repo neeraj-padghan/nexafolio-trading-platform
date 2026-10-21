@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import HomePage from "./landing_page/home/HomePage";
 import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
+import '@testing-library/jest-dom';
 
 test("renders Nexafolio Home Page with Navbar, Hero and Footer", () => {
   render(
