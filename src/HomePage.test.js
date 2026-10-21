@@ -20,6 +20,6 @@ test("renders Nexafolio Home Page with Navbar, Hero and Footer", () => {
   expect(heroHeading).toBeInTheDocument();
 
   // Check platform badge
-  const badgeText = screen.getByText(/Nexafolio Platform 3.0/i);
+  const badgeText = screen.getByText(/Nexafolio Platform 4.0/i);
   expect(badgeText).toBeInTheDocument();
 });
