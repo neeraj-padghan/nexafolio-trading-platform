@@ -32,7 +32,7 @@ function Hero() {
                 display: "inline-block",
               }}
             />
-            Nexafolio Platform 2.0 &bull; Intelligent Portfolio Management
+            Nexafolio Platform 3.0 &bull; Intelligent Portfolio Management
           </div>
 
           <h1
