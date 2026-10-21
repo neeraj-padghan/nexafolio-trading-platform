@@ -1,0 +1,282 @@
+/* ==========================================================================
+   Nexafolio Design System — Global CSS Variables & Foundation
+   ========================================================================== */
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Color Palette */
+  --bg-dark: #080C16;
+  --bg-primary: #0D1322;
+  --bg-surface: #131D31;
+  --bg-surface-elevated: #18243D;
+  --bg-surface-hover: #1E2D4C;
+  
+  --accent-emerald: #10B981;
+  --accent-emerald-light: #34D399;
+  --accent-emerald-dim: rgba(16, 185, 129, 0.12);
+  --accent-teal: #14B8A6;
+  --accent-blue: #3B82F6;
+  --accent-indigo: #6366F1;
+
+  --profit: #10B981;
+  --profit-bg: rgba(16, 185, 129, 0.12);
+  --loss: #F43F5E;
+  --loss-bg: rgba(244, 63, 94, 0.12);
+  --warning: #F59E0B;
+  --warning-bg: rgba(245, 158, 11, 0.12);
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #8092AC;
+  --text-faint: #475569;
+
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(16, 185, 129, 0.35);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --shadow-emerald: 0 8px 24px rgba(16, 185, 129, 0.2);
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-emerald);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-emerald-light);
+}
+
+/* Layout Utilities */
+.nexa-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nexa-section {
+  padding: 80px 0;
+}
+
+.nexa-section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px auto;
+}
+
+.nexa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--accent-emerald-dim);
+  color: var(--accent-emerald-light);
+  border: 1px solid var(--border-accent);
+  margin-bottom: 16px;
+}
+
+.nexa-heading-gradient {
+  background: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nexa-subheading {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-top: 14px;
+}
+
+/* Button System */
+.nexa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 26px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nexa-btn-primary {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-emerald);
+}
+
+.nexa-btn-primary:hover {
+  background: linear-gradient(135deg, #1cd696 0%, #08a374 100%);
+  transform: translateY(-1px);
+  color: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(16, 185, 129, 0.3);
+}
+
+.nexa-btn-secondary {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+}
+
+.nexa-btn-secondary:hover {
+  background: var(--bg-surface-hover);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.nexa-btn-outline {
+  background: transparent;
+  color: var(--accent-emerald);
+  border: 1px solid var(--border-accent);
+}
+
+.nexa-btn-outline:hover {
+  background: var(--accent-emerald-dim);
+  border-color: var(--accent-emerald);
+}
+
+.nexa-btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+/* Card System */
+.nexa-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.nexa-card:hover {
+  border-color: var(--border-medium);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.nexa-card-elevated {
+  background: var(--bg-surface-elevated);
+}
+
+/* Grid Layouts */
+.nexa-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.nexa-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.nexa-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .nexa-grid-4, .nexa-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .nexa-grid-4, .nexa-grid-3, .nexa-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .nexa-section {
+    padding: 50px 0;
+  }
+}
+
+/* Form Controls */
+.nexa-input, .nexa-select, .nexa-textarea {
+  width: 100%;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.nexa-input:focus, .nexa-select:focus, .nexa-textarea:focus {
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.nexa-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
